@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadoop Commands Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        pre {
+            background: #222;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hadoop Commands Guide (Windows & Linux)</h1>
+        
+        <h2>Check Java Version</h2>
+        <pre><code>java -version</code></pre>
+        <p>Displays the installed Java version.</p>
+        
+        <h2>Format NameNode</h2>
+        <pre><code>hdfs namenode -format</code></pre>
+        <p>Formats the Hadoop NameNode.</p>
+        
+        <h2>Start Hadoop Services</h2>
+        <pre><code>Windows: start-all.cmd
+Linux: ./start-all.sh</code></pre>
+        <p>Starts all Hadoop daemons.</p>
+
+        <h2>Stop Hadoop Services</h2>
+        <pre><code>Windows: stop-all.cmd
+Linux: ./stop-all.sh</code></pre>
+        <p>Stops all Hadoop daemons.</p>
+
+        <h2>Check Running Hadoop Processes</h2>
+        <pre><code>Windows: jps
+Linux: jps</code></pre>
+        <p>Lists running Java processes, useful for checking if Hadoop daemons are active.</p>
+
+        <h2>Create a Directory in HDFS</h2>
+        <pre><code>hdfs dfs -mkdir /data1</code></pre>
+        <p>Creates a directory in HDFS.</p>
+        
+        <h2>List Files in HDFS</h2>
+        <pre><code>hdfs dfs -ls /</code></pre>
+        <p>Lists all files and directories in the HDFS root.</p>
+        
+        <h2>View File Contents in HDFS</h2>
+        <pre><code>hdfs dfs -cat /data1/t1.txt</code></pre>
+        <p>Displays the content of a file stored in HDFS.</p>
+
+        <h2>Copy File from HDFS to Local</h2>
+        <pre><code># Change directory paths according to your system
+Windows: hdfs dfs -get /data1/t1.txt C:\your\local\path\t1.txt
+Linux: hdfs dfs -get /data1/t1.txt ~/your/local/path/t1.txt</code></pre>
+        <p>Copies a file from HDFS to the local system.</p>
+
+        <h2>Copy File from Local to HDFS</h2>
+        <pre><code># Change directory paths according to your system
+Windows: hdfs dfs -put C:\your\local\path\t1.txt /data1/
+Linux: hdfs dfs -put ~/your/local/path/t1.txt /data1/</code></pre>
+        <p>Uploads a file from the local system to HDFS.</p>
+
+        <h2>Copy File Within HDFS</h2>
+        <pre><code>hdfs dfs -cp /KMP8/T1.TXT /data</code></pre>
+        <p>Copies a file from one HDFS directory to another.</p>
+        
+        <h2>Get Help for HDFS Commands</h2>
+        <pre><code>hdfs dfs -help</code></pre>
+        <p>Displays help information for HDFS commands.</p>
+
+        <h2>Check Disk Usage in HDFS</h2>
+        <pre><code>hdfs dfs -du /directory_name</code></pre>
+        <p>Displays disk usage statistics for a specific directory in HDFS.</p>
+    </div>
+</body>
+</html>
